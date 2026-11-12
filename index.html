@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr Ammar's Code of Health</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Video consultation with Dr Ammar, specialty homoeopathy. Focused care for allergy, adenoid and chronic, recurring problems. Kozhikode, across Kerala.">
+<meta name="theme-color" content="#F3EFEC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: warm split-beige hero with doctor cut-out on an orange orb + rotating captions; stadium booking card; scroll-linked reveals (left/right/up); oval step cards; arch-reveal dark band; FAQ; circle CTA; black footer */
+:root{
+  --gl:#F3EFEC; --bg1:#FBF7F4; --bg2:#F5F1EE; --w:#FFFFFF; --ink:#141413; --text2:#756C66; --line:#E0DBD7;
+  --orange:#FF671B; --orange-w:#C14000; --orange-h:#882D00; --amber:#F79E1B; --footer:#000000; --footer-ink:#FFFFFF;
+  --font:"Figtree","Mark Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shadow:0 30px 60px -30px rgb(80 40 10 / .28),0 2px 6px rgb(80 40 10 / .06);
+  --anim-entry:0%; --anim-cover:22%;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --gl:#1B1916; --bg1:#1F1C19; --bg2:#1A1815; --w:#262320; --ink:#F4EFEA; --text2:#B3A9A1; --line:#3A3531;
+  --orange-w:#FF8A4C; --orange-h:#FFB38A; --footer:#000000; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --gl:#1B1916; --bg1:#1F1C19; --bg2:#1A1815; --w:#262320; --ink:#F4EFEA; --text2:#B3A9A1; --line:#3A3531;
+  --orange-w:#FF8A4C; --orange-h:#FFB38A; --footer:#000000; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--gl);color:var(--ink);font:400 16px/1.5 var(--font);letter-spacing:-.015em;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--w)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance;letter-spacing:-.025em}
+h2{font-size:clamp(32px,4vw,52px);line-height:1.08}
+h2 b,h1 b{font-weight:700}
+.or{color:var(--orange-w)}
+p{margin:0}
+img{display:block;max-width:100%}
+.lead{font-size:18px;color:var(--text2);line-height:1.55}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-w)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 22px;border-radius:999px;border:0;background:var(--orange-w);color:#fff;font:600 15px var(--font);letter-spacing:-.01em;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:#A33600}
+.btn svg{width:16px;height:16px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-lg{height:54px;padding:0 30px;font-size:16px}
+.btn-out{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-out:hover{background:var(--ink);color:var(--gl)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--w);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+.brand .dots{display:flex}
+.brand .dots i{width:20px;height:20px;border-radius:50%;background:var(--orange-w)}
+.brand .dots i+i{background:var(--amber);margin-left:-8px;mix-blend-mode:multiply}
+.nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
+.nav a{color:var(--ink);text-decoration:none;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--orange-w);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav a:hover::after{transform:scaleX(1)}
+@media (max-width:900px){.nav a{display:none}}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(90deg,var(--bg1) 0 50%,var(--bg2) 50% 100%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;min-height:min(640px,calc(100svh - 64px));padding-block:56px 0}
+.hero-copy{padding-bottom:72px;position:relative;z-index:2}
+.hero h1{font-size:clamp(40px,5.2vw,72px);line-height:1.02}
+.hero h1 b{display:block}
+.hero .lead{max-width:30em;margin-top:24px}
+.hero-act{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:36px}
+.hero-act small{font-size:13px;color:var(--text2)}
+.stage{position:relative;align-self:end;height:min(560px,62vw);min-height:360px;min-width:0}
+.orb{position:absolute;left:50%;bottom:-38%;width:min(640px,118%);aspect-ratio:1;max-width:none;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 30% 25%,#FFB15C,var(--orange) 45%,var(--orange-w) 100%)}
+.ring{position:absolute;border-radius:50%;border:1.5px solid var(--orange);opacity:.55;pointer-events:none}
+.ring.r1{width:min(820px,150%);aspect-ratio:1;left:50%;bottom:-62%;transform:translateX(-50%)}
+.slide{position:absolute;inset:0;display:grid;justify-items:center;align-items:end;opacity:0;transition:opacity .6s ease}
+.slide.on{opacity:1}
+.slide img{height:94%;width:auto;max-width:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 20px 30px rgb(80 30 0 / .25));transform:translateX(24px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.slide.on img{transform:none}
+.cap{position:absolute;top:12%;right:0;max-width:210px;font-size:14px;line-height:1.35;color:var(--ink);z-index:3}
+.cap strong{display:block;font-weight:700;margin-bottom:2px}
+.cap span{display:block;color:var(--text2)}
+.slide.on .cap strong{animation:fadeLeft .5s ease .1s both}
+.slide.on .cap .v1{animation:fadeLeft .5s ease .25s both}
+.slide.on .cap .v2{animation:fadeUp .5s ease 1.3s both;color:var(--orange-w);font-weight:600}
+.dots-nav{position:absolute;left:0;bottom:24px;display:flex;gap:8px;z-index:3}
+.dots-nav button{width:28px;height:4px;border-radius:4px;border:0;background:rgb(20 20 19 / .2);cursor:pointer;padding:0}
+.dots-nav button.on{background:var(--orange-w)}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@media (max-width:900px){
+  .hero{background:var(--bg1)}
+  .hero .wrap{grid-template-columns:1fr;padding-top:40px}
+  .hero-copy{padding-bottom:0}
+  .stage{height:420px;width:100%}
+  .cap{right:4px;top:6%;max-width:150px;font-size:13px}
+  .dots-nav{left:50%;transform:translateX(-50%)}
+}
+
+/* stadium booking card */
+.quiz{background:var(--gl);padding-block:0 96px;position:relative}
+.quiz-card{position:relative;z-index:2;margin:-40px auto 0;max-width:780px;background:var(--w);border-radius:220px;padding:44px clamp(24px,7vw,96px) 48px;text-align:center;box-shadow:var(--shadow);display:grid;gap:18px;justify-items:center}
+.quiz-card h2{font-size:clamp(26px,3vw,36px);font-weight:500}
+.select{position:relative;width:min(420px,100%)}
+.select select{appearance:none;width:100%;height:50px;border-radius:999px;border:1px solid var(--line);background:var(--gl);color:var(--ink);font:500 15px var(--font);padding:0 48px 0 22px}
+.select::after{content:"";position:absolute;right:22px;top:50%;width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.quiz-card p{font-size:14px;color:var(--text2);max-width:34em}
+@media (max-width:600px){.quiz-card{border-radius:48px}}
+
+/* why cards (partners) */
+.why{background:var(--gl);padding-block:40px 110px}
+.why .wrap{display:grid;grid-template-columns:3fr 9fr;gap:48px;align-items:start}
+.why-title{display:grid;gap:16px}
+.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.why-card{background:var(--w);border-radius:20px;padding:28px 26px;display:grid;gap:12px;align-content:start;min-height:260px}
+.why-card h3{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.why-card p{font-size:14.5px;color:var(--text2)}
+.why-card p b{color:var(--ink);font-weight:600}
+.why-card .ic{margin-top:auto;width:44px;height:44px;border-radius:50%;background:var(--gl);display:grid;place-items:center}
+.why-card .ic svg{width:22px;height:22px;stroke:var(--orange-w);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:1000px){.why .wrap{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.why-card{min-height:0}}
+
+/* steps with oval cards */
+.steps{background:var(--w);padding-block:110px}
+.steps-head{text-align:center;display:grid;gap:14px;justify-items:center}
+.steps-head .lead{max-width:30em}
+.ovals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:56px;list-style:none;padding:0}
+.oval{position:relative;aspect-ratio:5/8;max-width:100%;border-radius:999px;overflow:hidden;display:grid;justify-items:center;align-content:start;padding:36px 18px 0;text-align:center;color:#fff;isolation:isolate}
+.oval::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--og)}
+.oval::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgb(0 0 0 / .28),transparent 45%)}
+.oval .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#141413;border-radius:999px;padding:4px 6px 4px 12px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.oval .badge i{font-style:normal;width:20px;height:20px;border-radius:50%;background:var(--orange-w);color:#fff;display:grid;place-items:center;font-size:11px}
+.oval h3{font-size:22px;font-weight:600;margin-top:14px}
+.oval p{font-size:14px;margin-top:6px;opacity:.92;max-width:15em}
+.oval .art{position:absolute;bottom:-4%;left:50%;width:120%;transform:translateX(-50%);z-index:-1;display:grid;place-items:center}
+.oval .art svg{width:62%;stroke:#fff;stroke-width:1.2;fill:none;opacity:.9;stroke-linecap:round;stroke-linejoin:round}
+.o1{--og:linear-gradient(160deg,#F7A35C,#C14000)}
+.o2{--og:linear-gradient(160deg,#3A3A36,#141413)}
+.o3{--og:linear-gradient(160deg,#FFB15C,#FF671B)}
+.o4{--og:linear-gradient(160deg,#8C4A1E,#3D1C08)}
+.steps .cta{text-align:center;margin-top:44px}
+@media (max-width:1000px){.ovals{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.ovals{grid-template-columns:1fr;max-width:300px;margin-inline:auto}}
+
+/* links (health talks) */
+.links{background:var(--gl);padding-block:110px;overflow:hidden}
+.links .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.circ{position:relative;width:min(440px,100%);aspect-ratio:1;justify-self:center}
+.circ .ph{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--bg2)}
+.circ .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.circ .arc{position:absolute;inset:-9%;border-radius:50%;border:1.5px solid transparent;border-top-color:var(--orange);border-left-color:var(--orange);opacity:.8}
+.link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:32px}
+.link-card{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--w);color:var(--ink);text-decoration:none;border-radius:16px;padding:20px 22px;font-size:15px;font-weight:600;transition:transform .2s,box-shadow .2s}
+.link-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.link-card small{display:block;font-weight:400;color:var(--text2);font-size:13px;margin-top:2px}
+.link-card svg{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;transition:transform .25s}
+.link-card:hover svg{transform:translateX(4px)}
+@media (max-width:900px){.links .wrap{grid-template-columns:1fr}.link-list{grid-template-columns:1fr}}
+
+/* arch reveal dark band */
+.arch-sec{background:var(--gl);padding-top:20px}
+.arch{position:relative;background:radial-gradient(70% 90% at 80% 100%,#5A2A0D 0,#141413 62%);color:#fff;overflow:hidden;clip-path:inset(0 0 0 0 round 0)}
+.arch .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;min-height:560px;padding-top:80px}
+.arch-copy{padding-bottom:88px;display:grid;gap:22px;max-width:28em}
+.arch-copy h2{font-weight:300}
+.arch-copy h2 b{font-weight:700}
+.arch-copy p{color:rgb(255 255 255 / .82);font-size:17px}
+.arch-copy p b{color:#fff}
+.arch-copy small{font-size:12px;color:rgb(255 255 255 / .6);border-top:1px solid rgb(255 255 255 / .3);padding-top:10px;max-width:22em}
+.arch-fig{position:relative;justify-self:center;width:min(480px,100%);align-self:end;min-width:0}
+.arch-fig::before{content:"";position:absolute;left:50%;bottom:-40%;width:110%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFB15C,var(--orange) 50%,#C14000)}
+.arch-fig img{position:relative;width:100%;height:auto;filter:drop-shadow(0 30px 40px rgb(0 0 0 / .4))}
+@media (max-width:900px){.arch .wrap{grid-template-columns:1fr;padding-top:64px}.arch-copy{padding-bottom:12px}.arch-fig{width:min(360px,90%)}}
+
+/* room */
+.room{background:var(--gl);padding-block:100px 40px}
+.room-card{background:var(--w);border-radius:32px;padding:44px;display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center}
+.room-card .lead{margin-top:14px}
+.join{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.join input{flex:1 1 200px;min-width:0;height:50px;border-radius:999px;border:1px solid var(--line);background:var(--gl);color:var(--ink);padding:0 22px;font:500 15px var(--font)}
+.join .btn{height:50px}
+.join-err{min-height:1.4em;margin-top:8px;font-size:14px;color:var(--orange-w);font-weight:600}
+.callbox{aspect-ratio:16/10;max-width:100%;border-radius:24px;background:var(--gl);display:grid;place-items:center;text-align:center;padding:20px;color:var(--text2);overflow:hidden;border:1.5px dashed var(--line)}
+.callbox iframe{width:100%;height:100%;border:0;border-radius:18px}
+@media (max-width:900px){.room-card{grid-template-columns:1fr;padding:28px 22px}}
+
+/* faq */
+.faq{background:var(--gl);padding-block:80px 110px}
+.faq .wrap{display:grid;grid-template-columns:3fr 8fr;gap:56px}
+.faq h2{font-weight:500}
+.faq-list{display:grid;gap:12px}
+.faq-item{background:var(--w);border-radius:14px}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-size:16px;font-weight:600}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:22px;font-weight:400;line-height:1;color:var(--ink);transition:transform .25s}
+.faq-item[open] summary::after{transform:rotate(45deg);color:var(--orange-w)}
+.faq-item p{padding:0 24px 22px;color:var(--text2);font-size:15px;max-width:44em}
+@media (max-width:900px){.faq .wrap{grid-template-columns:1fr;gap:28px}}
+
+/* closing */
+.simple{background:var(--w);padding-block:110px;overflow:hidden}
+.simple .wrap{display:grid;grid-template-columns:6fr 5fr;gap:48px;align-items:center}
+.simple h2{font-weight:500}
+.simple .lead{margin-top:18px;max-width:30em}
+.simple .num{margin-top:28px;font-size:14px;color:var(--text2)}
+.simple .num b{display:block;font-size:22px;color:var(--ink);user-select:all;letter-spacing:-.01em}
+.circ.c2 .ph{background:radial-gradient(circle at 35% 30%,#FFB15C,var(--orange) 55%,#C14000)}
+.circ.c2 .ph img{object-fit:contain;object-position:50% 100%;height:92%;margin-top:8%}
+.circ.c2 .arc{border-top-color:transparent;border-left-color:transparent;border-right-color:var(--orange);border-bottom-color:var(--orange)}
+.circ .float{position:absolute;top:18%;left:-6%;z-index:2}
+@media (max-width:900px){.simple .wrap{grid-template-columns:1fr}.circ .float{left:0}}
+
+footer{background:var(--footer);color:var(--footer-ink);padding-block:44px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:24px}
+footer a{color:var(--footer-ink);text-decoration:none;font-weight:500}
+footer a:hover{color:var(--orange)}
+footer small{color:rgb(255 255 255 / .55)}
+
+/* ===== Scroll-linked reveals (like kamdalej) ===== */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline: view()){
+    [data-anim]{animation-timing-function:linear;animation-fill-mode:both;animation-timeline:view(y);animation-range:entry var(--anim-entry) cover var(--anim-cover)}
+    [data-anim="left"]{animation-name:revealLeft}
+    [data-anim="right"]{animation-name:revealRight}
+    [data-anim="up"]{animation-name:revealUp}
+    [data-anim]+[data-anim]{animation-range:entry calc(var(--anim-entry) + 3%) cover calc(var(--anim-cover) * 1.2)}
+    [data-anim]+[data-anim]+[data-anim]{animation-range:entry calc(var(--anim-entry) + 6%) cover calc(var(--anim-cover) * 1.4)}
+    [data-anim]+[data-anim]+[data-anim]+[data-anim]{animation-range:entry calc(var(--anim-entry) + 9%) cover calc(var(--anim-cover) * 1.6)}
+    [data-anim]+[data-anim]+[data-anim]+[data-anim]+[data-anim]{animation-range:entry calc(var(--anim-entry) + 12%) cover calc(var(--anim-cover) * 1.8)}
+    [data-anim]+[data-anim]+[data-anim]+[data-anim]+[data-anim]+[data-anim]{animation-range:entry calc(var(--anim-entry) + 15%) cover calc(var(--anim-cover) * 2)}
+    .arch{animation:archOpen linear both;animation-timeline:view(y);animation-range:entry 0% cover 45%}
+    .spin{animation:spin linear both;animation-timeline:view(y);animation-range:entry 0% exit 100%}
+  }
+  .ring.r1{animation:breathe 9s ease-in-out infinite}
+}
+@keyframes revealLeft{from{opacity:0;transform:translateX(100px)}to{opacity:1;transform:none}}
+@keyframes revealRight{from{opacity:0;transform:translateX(-100px)}to{opacity:1;transform:none}}
+@keyframes revealUp{from{opacity:0;transform:translateY(100px)}to{opacity:1;transform:none}}
+@keyframes archOpen{from{clip-path:inset(0 6% 0 6% round 50vw 50vw 0 0)}to{clip-path:inset(0 0 0 0 round 0)}}
+@keyframes spin{from{transform:rotate(-40deg)}to{transform:rotate(80deg)}}
+@keyframes breathe{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.03)}}
+section:has([data-anim]){overflow-x:clip}
+
+/* ===== booking sheet ===== */
+.sheet{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgb(20 20 19 / .55);padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.bk{background:var(--w);color:var(--ink);width:min(560px,100%);max-height:100%;overflow:auto;border-radius:28px;padding:28px;display:grid;gap:18px;box-shadow:var(--shadow);animation:fadeUp .35s ease both}
+.bk-head{display:flex;justify-content:space-between;align-items:start;gap:16px}
+.bk-head h2{font-size:28px;font-weight:600;margin-top:4px}
+.x{background:var(--gl);border:0;width:38px;height:38px;border-radius:50%;font-size:22px;line-height:1;color:var(--ink);cursor:pointer;flex:none}
+.prog{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.prog i{height:4px;border-radius:4px;background:var(--line)}
+.prog i.on{background:var(--orange-w)}
+.opt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;border-radius:18px;padding:18px 20px;background:var(--gl)}
+.opt b{font-size:17px}
+.opt small{color:var(--text2)}
+.fee{font-size:28px;font-weight:700;grid-row:span 2;align-self:center;font-variant-numeric:tabular-nums;color:var(--orange-w)}
+.fields{display:grid;gap:14px}
+.fields label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.fields input,.fields textarea,.fields select{font:500 16px var(--font);padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:var(--gl);color:var(--ink);width:100%}
+.two{display:grid;grid-template-columns:minmax(0,1fr) 6.5rem;gap:12px}
+.err{color:var(--orange-w);font-size:14px;min-height:1.3em;font-weight:600}
+.pay{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center}
+#qr{background:#fff;padding:10px;border-radius:18px;width:180px;height:180px;display:grid;place-items:center;box-shadow:var(--shadow)}
+#qr img,#qr canvas{width:160px!important;height:160px!important}
+.upi{font:600 14px ui-monospace,Menlo,monospace;word-break:break-all;color:var(--text2)}
+@media (max-width:480px){.pay{grid-template-columns:1fr}.bk{padding:22px}}
+#calSlot{min-height:420px;border-radius:18px;background:var(--gl);overflow:auto}
+.fallback{padding:20px;color:var(--text2);display:grid;gap:12px;justify-items:start}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+.summary{background:var(--gl);border-radius:16px;padding:16px 18px;font-size:15px;display:grid;gap:4px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Code of Health, home"><span class="dots" aria-hidden="true"><i></i><i></i></span>Code of Health</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#how">How it works</a><a href="#talks">Health talks</a><a href="#faq">FAQ</a><a href="#room">Join call</a>
+      <button class="btn" data-book>Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 id="hero-title"><b>Dr Ammar</b> care for problems that keep coming back</h1>
+        <p class="lead">Consult Dr Ammar by video from wherever you are. The call happens privately on this website, with no third-party apps and no travel.</p>
+        <div class="hero-act">
+          <button class="btn btn-lg" data-book>Book a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <small>Specialty homoeopathy · Kozhikode · 30-minute video calls</small>
+        </div>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <span class="ring r1"></span>
+        <span class="orb"></span>
+        <div class="slide on">
+          <img src="assets/dr-ammar-cut-1.webp" alt="">
+          <p class="cap"><strong>Allergy care</strong><span class="v1">The same symptoms every season,</span><span class="v2">now a plan built around your triggers.</span></p>
+        </div>
+        <div class="slide">
+          <img src="assets/dr-ammar-cut-2.webp" alt="">
+          <p class="cap"><strong>Adenoid &amp; children</strong><span class="v1">A child always blocked up,</span><span class="v2">now gentle care with the family on the call.</span></p>
+        </div>
+        <div class="slide">
+          <img src="assets/dr-ammar-cut-1.webp" alt="">
+          <p class="cap"><strong>Chronic care</strong><span class="v1">Years of the same complaint,</span><span class="v2">now steady follow-ups from home.</span></p>
+        </div>
+        <div class="dots-nav"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz" aria-labelledby="quiz-title">
+    <div class="wrap">
+      <div class="quiz-card" data-anim="up">
+        <p class="kicker">Answer one question and start booking</p>
+        <h2 id="quiz-title">Who is the consultation for?</h2>
+        <div class="select">
+          <select id="forWho" aria-label="Who is the consultation for">
+            <option value="">Select one</option>
+            <option>Myself</option><option>My child</option><option>My parent</option><option>Someone else</option>
+          </select>
+        </div>
+        <p>Children and older parents can join the call together with you.</p>
+        <button class="btn btn-lg" id="quizGo">Start booking</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="why-title">
+        <h2 id="why-title" data-anim="right">Care that <span class="or">fits your life</span></h2>
+        <p class="lead" data-anim="right">Online consultations built for privacy, <b>easy payment and follow-up that continues.</b></p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card" data-anim="up"><h3>Private video room</h3><p>Your call runs inside <b>Dr Ammar's own website</b>. Nothing to install, nothing shared on social apps.</p><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></span></article>
+        <article class="why-card" data-anim="up"><h3>Pay by UPI</h3><p>GPay, PhonePe, Paytm or any UPI app. <b>You see the fee before you pay.</b></p><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></span></article>
+        <article class="why-card" data-anim="up"><h3>Follow-up that continues</h3><p>Review calls are video too, so <b>care keeps going even when you're far from Kozhikode.</b></p><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg></span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="steps-head">
+        <h2 id="how-title" data-anim="left">Your consultation in <span class="or">four steps</span></h2>
+        <p class="lead" data-anim="left">Everything happens on this website. Only your room code arrives on WhatsApp.</p>
+      </div>
+      <ol class="ovals">
+        <li class="oval o1" data-anim="up"><span class="badge">Step <i>1</i></span><h3>Your details</h3><p>Name, age, WhatsApp number and a few lines on the concern.</p><span class="art"><svg viewBox="0 0 100 100"><circle cx="50" cy="34" r="16"/><path d="M18 92c4-20 18-30 32-30s28 10 32 30"/></svg></span></li>
+        <li class="oval o2" data-anim="up"><span class="badge">Step <i>2</i></span><h3>Pay by UPI</h3><p>Scan the QR or tap to open your UPI app.</p><span class="art"><svg viewBox="0 0 100 100"><rect x="28" y="10" width="44" height="80" rx="9"/><path d="M42 18h16M40 40h8v8h-8zM52 40h8v8h-8zM40 52h8v8h-8zM56 56h4v4"/></svg></span></li>
+        <li class="oval o3" data-anim="up"><span class="badge">Step <i>3</i></span><h3>Pick a time</h3><p>Choose a 30-minute slot on Dr Ammar's calendar.</p><span class="art"><svg viewBox="0 0 100 100"><rect x="16" y="22" width="68" height="62" rx="8"/><path d="M16 40h68M34 14v14M66 14v14M32 54h8M48 54h8M64 54h4M32 68h8M48 68h8"/></svg></span></li>
+        <li class="oval o4" data-anim="up"><span class="badge">Step <i>4</i></span><h3>Join here</h3><p>Enter your room code below and talk face to face.</p><span class="art"><svg viewBox="0 0 100 100"><rect x="10" y="26" width="58" height="46" rx="8"/><path d="m68 42 22-12v38L68 56"/><circle cx="39" cy="46" r="8"/><path d="M27 66c3-6 8-8 12-8s9 2 12 8"/></svg></span></li>
+      </ol>
+      <div class="cta"><button class="btn btn-lg" data-book>Start booking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </div>
+  </section>
+
+  <section class="links" id="talks" aria-labelledby="talks-title">
+    <div class="wrap">
+      <div class="circ" data-anim="right">
+        <span class="arc spin"></span>
+        <div class="ph"><img src="assets/dr-ammar.jpg" alt="Dr Ammar in his clinic in Kozhikode"></div>
+      </div>
+      <div>
+        <h2 id="talks-title" data-anim="left"><span class="or">Health talks</span><br>by Dr Ammar</h2>
+        <p class="lead" data-anim="left" style="margin-top:16px;max-width:32em">More than 65,000 people follow his practical health guidance in Malayalam. Watch before you book, or reach the clinic directly.</p>
+        <div class="link-list">
+          <a class="link-card" data-anim="left" href="https://www.instagram.com/dr_ammars_code_of_health/reels/" target="_blank" rel="noopener"><span>Instagram reels<small>@dr_ammars_code_of_health</small></span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="link-card" data-anim="left" href="https://youtube.com/@codeofhealth23" target="_blank" rel="noopener"><span>YouTube channel<small>@codeofhealth23</small></span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="link-card" data-anim="left" href="https://wa.me/917591922922" target="_blank" rel="noopener"><span>Clinic WhatsApp<small>+91 75919 22922</small></span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="link-card" data-anim="left" href="#room"><span>Consultation room<small>Join with your room code</small></span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="arch-sec" aria-labelledby="arch-title">
+    <div class="arch">
+      <div class="wrap">
+        <div class="arch-copy">
+          <h2 id="arch-title">Care that looks for <b>the reason, not only the relief</b></h2>
+          <p>Dr Ammar runs <b>Dr Ammar's Specialty Homoeopathy</b> in Kozhikode. He takes time with the <b>full history, routine and triggers</b> before a plan is made, then follows up to see what is really changing.</p>
+          <!-- Confirm qualification / registration with Dr Ammar -->
+          <small>[Qualification] · [Registration No.] · [—] years in practice</small>
+        </div>
+        <figure class="arch-fig" style="margin:0" data-anim="up"><img src="assets/dr-ammar-cut-2.webp" alt="Dr Ammar"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="room" id="room" aria-labelledby="room-title">
+    <div class="wrap">
+      <div class="room-card" data-anim="up">
+        <div>
+          <p class="kicker">Consultation room</p>
+          <h2 id="room-title" style="margin-top:10px">Your call opens <span class="or">right here</span></h2>
+          <p class="lead">Enter the room code from your WhatsApp message at your booked time. Allow camera and microphone when asked.</p>
+          <form class="join" id="joinForm">
+            <input id="roomCode" aria-label="Room code" placeholder="Room code, e.g. ammar-1430" autocomplete="off">
+            <button class="btn" type="submit">Join call</button>
+          </form>
+          <p class="join-err" id="joinErr"></p>
+        </div>
+        <div class="callbox" id="callbox"><p>Your video call will appear here.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div>
+        <h2 id="faq-title" data-anim="right">Frequently <span class="or">asked questions</span></h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" data-anim="left"><summary>1. How long is a consultation?</summary><p>Each video consultation is 30 minutes, one to one with Dr Ammar.</p></details>
+        <details class="faq-item" data-anim="left"><summary>2. Do I need to install an app?</summary><p>No. The call runs in your phone or laptop browser on this website. Chrome and Safari both work.</p></details>
+        <details class="faq-item" data-anim="left"><summary>3. How do I pay?</summary><p>By UPI. Scan the QR code or tap to open your UPI app, then enter the transaction ID to continue to the calendar.</p></details>
+        <details class="faq-item" data-anim="left"><summary>4. When do I get my room code?</summary><p>After the clinic checks your payment, the room code is sent to the WhatsApp number you gave while booking.</p></details>
+        <details class="faq-item" data-anim="left"><summary>5. Can I book for my child or a parent?</summary><p>Yes. Enter the patient's name and age, and join the call together.</p></details>
+        <details class="faq-item" data-anim="left"><summary>6. Is this for emergencies?</summary><p>No. In an emergency, go to the nearest hospital or call 112.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="simple" aria-labelledby="end-title">
+    <div class="wrap">
+      <div>
+        <h2 id="end-title" data-anim="right">Ready to feel better, for longer?<br><span class="or">Book your consultation.</span></h2>
+        <p class="lead" data-anim="right">Fill in a few details, pay by UPI and pick a time. You'll meet Dr Ammar face to face, right on this website.</p>
+        <p class="num" data-anim="right">Questions about appointments? WhatsApp the clinic<b>+91 75919 22922</b></p>
+      </div>
+      <div class="circ c2" data-anim="left">
+        <span class="arc spin"></span>
+        <div class="ph"><img src="assets/dr-ammar-cut-1.webp" alt="Dr Ammar"></div>
+        <button class="btn float" data-book>Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top" style="color:#fff"><span class="dots" aria-hidden="true"><i></i><i></i></span>Code of Health</a>
+    <nav>
+      <a href="https://www.instagram.com/dr_ammars_code_of_health/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@codeofhealth23" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://wa.me/917591922922" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <small>© <span id="yr"></span> Dr Ammar's Code of Health · Kozhikode, Kerala</small>
+  </div>
+</footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+  <div class="bk">
+    <div class="bk-head">
+      <div><p class="kicker" id="bkStep">Step 1 of 4</p><h2 id="bkTitle">Your consultation</h2></div>
+      <button class="x" id="closeSheet" aria-label="Close">×</button>
+    </div>
+    <div class="prog"><i></i><i></i><i></i><i></i></div>
+
+    <div data-step="1" class="fields">
+      <div class="opt"><div><b>Video consultation</b><br><small>30 minutes · one to one with Dr Ammar</small></div><div class="fee" id="feeText">₹—</div></div>
+      <label for="pFor">Consultation for<select id="pFor"><option>Myself</option><option>My child</option><option>My parent</option><option>Someone else</option></select></label>
+      <label for="pName">Patient's name<input id="pName" autocomplete="name"></label>
+      <div class="two">
+        <label for="pPhone">WhatsApp number<input id="pPhone" inputmode="tel" placeholder="+91 …" autocomplete="tel"></label>
+        <label for="pAge">Age<input id="pAge" inputmode="numeric" maxlength="3"></label>
+      </div>
+      <label for="pNote">What would you like to discuss?<textarea id="pNote" rows="3" placeholder="A few lines are enough"></textarea></label>
+      <p class="err" id="err1"></p>
+      <div class="actions"><span></span><button class="btn" id="to2">Continue to payment</button></div>
+    </div>
+
+    <div data-step="2" class="fields" hidden>
+      <div class="pay">
+        <div id="qr" aria-label="UPI QR code"></div>
+        <div style="display:grid;gap:10px;min-width:0">
+          <p>Scan with GPay, PhonePe, Paytm or any UPI app.</p>
+          <p class="upi" id="upiText"></p>
+          <a class="btn btn-out" id="upiLink" href="#" style="justify-self:start">Open UPI app</a>
+        </div>
+      </div>
+      <label for="pRef">UPI transaction ID (UTR) after paying<input id="pRef" inputmode="numeric" placeholder="12-digit reference"></label>
+      <p class="err" id="err2"></p>
+      <div class="actions"><button class="btn btn-out" data-back>Back</button><button class="btn" id="to3">I've paid, pick a time</button></div>
+    </div>
+
+    <div data-step="3" class="fields" hidden>
+      <div id="calSlot"><div class="fallback">Loading the doctor's calendar…</div></div>
+      <div class="actions"><button class="btn btn-out" data-back>Back</button><button class="btn" id="to4">I've chosen a time</button></div>
+    </div>
+
+    <div data-step="4" class="fields" hidden>
+      <p>Send your booking to the clinic on WhatsApp. After the payment is checked, they reply with your room code.</p>
+      <div class="summary" id="summary"></div>
+      <div class="actions"><button class="btn btn-out" data-back>Back</button><a class="btn" id="sendWa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* ========= EDIT THESE when Dr Ammar confirms ========= */
+const CONFIG = {
+  fee: 500,                                  // consultation fee in ₹ (shown only inside booking)
+  upiId: "drammar@upi",                      // his UPI ID
+  upiName: "Dr Ammar",                       // name shown in UPI app
+  whatsapp: "917591922922",                  // clinic WhatsApp, digits only
+  calLink: "dr-ammar/video-consultation",    // Cal.com event path (cal.com/<this>)
+  dailyDomain: "drammar"                     // Daily.co subdomain → https://drammar.daily.co/<room>
+};
+/* ===================================================== */
+
+const $ = s => document.querySelector(s);
+$("#yr").textContent = new Date().getFullYear();
+$("#feeText").textContent = "₹" + CONFIG.fee;
+
+/* hero rotator */
+(function(){
+  const slides = [...document.querySelectorAll(".slide")], nav = $(".dots-nav");
+  let i = 0, timer;
+  slides.forEach((_, k) => { const b = document.createElement("button"); b.setAttribute("aria-label", "Show caption " + (k+1)); b.onclick = () => go(k, true); nav.appendChild(b); });
+  const dots = [...nav.children];
+  function go(n, user){
+    slides[i].classList.remove("on"); dots[i].classList.remove("on");
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add("on"); dots[i].classList.add("on");
+    if (user){ clearInterval(timer); timer = setInterval(() => go(i+1), 5200); }
+  }
+  dots[0].classList.add("on");
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => go(i+1), 5200);
+})();
+
+/* booking sheet */
+const sheet = $("#sheet"); let step = 1;
+function show(n){
+  step = n;
+  document.querySelectorAll("[data-step]").forEach(el => el.hidden = +el.dataset.step !== n);
+  document.querySelectorAll(".prog i").forEach((el,k) => el.classList.toggle("on", k < n));
+  $("#bkStep").textContent = `Step ${n} of 4`;
+  $("#bkTitle").textContent = ["Your consultation","Pay by UPI","Choose a time","Confirm on WhatsApp"][n-1];
+}
+function openSheet(){ sheet.hidden = false; show(1); $("#pName").focus(); }
+document.querySelectorAll("[data-book]").forEach(b => b.addEventListener("click", openSheet));
+$("#quizGo").addEventListener("click", () => { if ($("#forWho").value) $("#pFor").value = $("#forWho").value; openSheet(); });
+$("#closeSheet").addEventListener("click", () => sheet.hidden = true);
+sheet.addEventListener("click", e => { if (e.target === sheet) sheet.hidden = true; });
+document.addEventListener("keydown", e => { if (e.key === "Escape") sheet.hidden = true; });
+document.querySelectorAll("[data-back]").forEach(b => b.addEventListener("click", () => show(step - 1)));
+const val = id => $(id).value.trim();
+
+$("#to2").addEventListener("click", () => {
+  if (!val("#pName")) return $("#err1").textContent = "Enter the patient's name.";
+  if (val("#pPhone").replace(/\D/g,"").length < 10) return $("#err1").textContent = "Enter a WhatsApp number with at least 10 digits.";
+  $("#err1").textContent = "";
+  const upi = `upi://pay?pa=${encodeURIComponent(CONFIG.upiId)}&pn=${encodeURIComponent(CONFIG.upiName)}&am=${CONFIG.fee}&cu=INR&tn=${encodeURIComponent(("Consultation " + val("#pName")).slice(0,40))}`;
+  $("#upiLink").href = upi;
+  $("#upiText").textContent = `${CONFIG.upiId} · ₹${CONFIG.fee}`;
+  const qr = $("#qr"); qr.innerHTML = "";
+  if (window.QRCode) new QRCode(qr, { text: upi, width: 160, height: 160, correctLevel: QRCode.CorrectLevel.M });
+  else qr.textContent = "Use the button to pay";
+  show(2);
+});
+
+let calLoaded = false;
+$("#to3").addEventListener("click", () => {
+  if (val("#pRef").replace(/\D/g,"").length < 6) return $("#err2").textContent = "Enter the transaction ID shown in your UPI app after paying.";
+  $("#err2").textContent = "";
+  show(3);
+  if (!calLoaded) loadCal();
+});
+
+function loadCal(){
+  calLoaded = true;
+  const box = $("#calSlot");
+  const fallback = () => { box.innerHTML = `<div class="fallback"><p>The calendar could not load here.</p><a class="btn" href="https://cal.com/${CONFIG.calLink}?name=${encodeURIComponent(val("#pName"))}" target="_blank" rel="noopener">Open the calendar</a></div>`; };
+  try {
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+    box.innerHTML = "";
+    Cal("inline", { elementOrSelector: "#calSlot", calLink: CONFIG.calLink,
+      config: { name: val("#pName"), notes: `For: ${val("#pFor")} | WhatsApp: ${val("#pPhone")} | Age: ${val("#pAge")} | UPI ref: ${val("#pRef")} | ${val("#pNote")}` } });
+    Cal("ui", { hideEventTypeDetails: true, layout: "month_view", styles: { branding: { brandColor: "#C14000" } } });
+    setTimeout(() => { if (!box.querySelector("iframe")) fallback(); }, 8000);
+  } catch (e) { fallback(); }
+}
+
+$("#to4").addEventListener("click", () => {
+  const rows = [["For", val("#pFor")],["Patient", val("#pName")],["Age", val("#pAge") || "—"],["WhatsApp", val("#pPhone")],["Fee paid", "₹" + CONFIG.fee],["UPI ref", val("#pRef")],["Concern", val("#pNote") || "—"]];
+  $("#summary").innerHTML = rows.map(([k,v]) => `<div><b>${k}:</b> ${v.replace(/[<>&]/g,"")}</div>`).join("");
+  const msg = "New video consultation booking\n" + rows.map(([k,v]) => `${k}: ${v}`).join("\n") + "\nSlot: booked on the website calendar";
+  $("#sendWa").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  show(4);
+});
+
+$("#joinForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const code = val("#roomCode").toLowerCase().replace(/[^a-z0-9-]/g,"");
+  if (!code) return $("#joinErr").textContent = "Enter the room code from your WhatsApp message.";
+  $("#joinErr").textContent = "";
+  $("#callbox").innerHTML = `<iframe title="Video consultation" src="https://${CONFIG.dailyDomain}.daily.co/${code}" allow="camera; microphone; fullscreen; display-capture; autoplay"></iframe>`;
+});
+</script>
+
+</body>
+</html>
